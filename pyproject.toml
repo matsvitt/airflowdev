@@ -6,8 +6,9 @@ authors = ["Matthias Vitt <matthias.vitt@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.13"
 pytest = "^8.3.3"
+apache-airflow = "2.10.1"
 
 
 [build-system]

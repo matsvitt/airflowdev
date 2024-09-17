@@ -10,8 +10,10 @@
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "postCreateCommand": "pip install -r requirements.txt",
   "mounts": [
-	"source=${localEnv:HOME}/src/finvalue,target=/home/vscode/src/finvalue,type=bind,consistency=cached",
-	"source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
+      "source=${localEnv:HOME}/src/airflowdev/dags,target=/home/vscode/dags,type=bind,consistency=cached",
+      "source=${localEnv:HOME}/src/airflowdev/logs,target=/home/vscode/logs,type=bind,consistency=cached",
+      "source=${localEnv:HOME}/src/airflowdev/plugins,target=/home/vscode/plugins,type=bind,consistency=cached",      
+      "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,type=bind,consistency=cached"
     ],
-  "runArgs": ["--network=pickaxe"]
+//  "runArgs": ["--network=pickaxe"]
 }
