@@ -63,7 +63,12 @@ with DAG(dag_id="mv1",schedule=None,start_date=datetime(2024,1,1),catchup=False,
     )
 
     #FileSniffer
-    sftp_with_operator = SFTPSensor(task_id="sftp_operator", path="/home/cloud_user/bin/touchfile", poke_interval=10, timeout=30,sftp_conn_id="sftp2aws")
+    
+    sx="/home/cloud_user/bin/touchfile-{{ next_ds_nodash }}"
+    
+    print(sx)
+    #dag started at night but we look for files which are due tomorrw. using tomorrow_ds_nodash in YYYYMMDD format
+    sftp_with_operator = SFTPSensor(task_id="sftp_operator", path="/home/cloud_user/bin/touchfile-{{ tomorrow_ds_nodash }}", poke_interval=10, timeout=30,sftp_conn_id="sftp2aws")
     
     #execution_date.tomorrow()
     #DateTimeSniffer
