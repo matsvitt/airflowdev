@@ -44,7 +44,7 @@ def print_context(ds,execution_date, **kwargs):
 from airflow.providers.ssh.operators.ssh import SSHOperator
 from airflow.providers.sftp.sensors.sftp import SFTPSensor
 
-
+#Use Admin / Connection to create a new ssh sftp connection using in extras { "key_file" : "/path/tp/keyfile"}
 
 with DAG(dag_id="mv1",schedule=None,start_date=datetime(2024,1,1),catchup=False,tags=["examplemv"]) as dag:
     run_this = print_context()
